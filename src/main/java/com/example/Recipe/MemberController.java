@@ -19,5 +19,6 @@ public class MemberController {
     public String addMember(@PathVariable  String id, Member member) throws ExecutionException, InterruptedException, IOException {
         return  MemberService.addMember(id, member.getEmail(), member.getPassword(), member.getName());
 
+
     }
 }

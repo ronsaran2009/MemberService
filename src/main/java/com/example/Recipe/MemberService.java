@@ -14,22 +14,23 @@ public class MemberService {
 
     public static String addMember(String username, String email, String password, String name)  {
         member = new Member(username, email, password, name);
-//        String url = "https://----.firebaseIO.com/";
-//        Firebase dataRef = new Firebase(url);
+//       menu = setMenu(menu, memberId, menuFromWeb);
 //
-//    dataRef.addListenerForSingleValueEvent(new ValueEventListener() {
-//         @Override
-//         public void onDataChange(DataSnapshot snapshot) {
-//             System.out.println("data");
-//         }
+//        //set menu id
+//        menu.setMenuId(setNewMenuId(menu.getCategory()));
+//        menuFromWeb.setMenuId(menu.getMenuId());
 //
-//         @Override
-//         public void onCancelled() {
-//             System.err.println("Listener was cancelled");
-//         }
-//    });
+//        //set manage
+//        manage = new Manage();
+//        manage.setMemberId(memberId);
+//        manage.setMenu(menuFromWeb);
+//        manage.setMenuId(menuFromWeb.getMenuId());
 //
-//    System.out.println("hi");
+//        //call repo //save menu
+//        manageRepository.save(menu);
+//
+//        //return manage
+//        return manage;
 
         return "success";
     }
