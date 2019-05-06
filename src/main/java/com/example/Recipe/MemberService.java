@@ -1,17 +1,9 @@
 package com.example.Recipe;
 
-import com.google.api.core.ApiFuture;
-import com.google.auth.oauth2.GoogleCredentials;
-import com.google.cloud.firestore.DocumentReference;
-import com.google.cloud.firestore.Firestore;
-import com.google.cloud.firestore.WriteResult;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.FirebaseOptions;
-import com.google.firebase.cloud.FirestoreClient;
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.ExecutionException;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.ValueEventListener;
+
+
 
 public class MemberService {
     private static Member member;
@@ -20,10 +12,10 @@ public class MemberService {
 
     public MemberService(){}
 
-    public static String addMember(String username, String email, String password, String name) throws ExecutionException, InterruptedException, IOException {
+    public static String addMember(String username, String email, String password, String name)  {
         member = new Member(username, email, password, name);
 //        String url = "https://----.firebaseIO.com/";
-//    Firebase dataRef = new Firebase(url);
+//        Firebase dataRef = new Firebase(url);
 //
 //    dataRef.addListenerForSingleValueEvent(new ValueEventListener() {
 //         @Override
