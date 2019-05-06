@@ -2,37 +2,36 @@ package com.example.Recipe;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.ValueEventListener;
-
+import org.springframework.beans.factory.annotation.Autowired;
 
 
 public class MemberService {
+    @Autowired
+
+    MemberRepository memberRepository;
+
     private static Member member;
 
 
 
     public MemberService(){}
 
-    public static String addMember(String username, String email, String password, String name)  {
+    public static Member addMember(String username, String email, String password, String name)  {
         member = new Member(username, email, password, name);
-//       menu = setMenu(menu, memberId, menuFromWeb);
-//
-//        //set menu id
-//        menu.setMenuId(setNewMenuId(menu.getCategory()));
-//        menuFromWeb.setMenuId(menu.getMenuId());
-//
-//        //set manage
-//        manage = new Manage();
-//        manage.setMemberId(memberId);
-//        manage.setMenu(menuFromWeb);
-//        manage.setMenuId(menuFromWeb.getMenuId());
-//
-//        //call repo //save menu
-//        manageRepository.save(menu);
-//
-//        //return manage
-//        return manage;
 
-        return "success";
+        MemberTable memberTable = new MemberTable();
+        memberTable.setEmail(member.getEmail());
+        memberTable.setName(member.getName());
+        memberTable.setPassword(member.getPassword());
+        memberTable.setUsername(member.getUsername());
+
+
+
+        //call repo //save menu
+        memberRepository.save(memberTable);
+
+
+        return member;
     }
 
     public static Member getMember(String memberId){
